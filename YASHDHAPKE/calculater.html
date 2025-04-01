@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>
+        Calculater
+    </title>
+
+    <style>
+        .main {
+            margin-top: 50px;
+            border-style: solid;
+            border-color: #c800ff;
+            background-color: rgb(19, 18, 18);
+            height: 520px;
+            width: 400px;
+            border-radius: 20px;
+            margin-left: 520px;
+
+        }
+
+        .top {
+
+            margin-left: 22px;
+            border-radius: 20px;
+            padding-top: 10px;
+            border-style: solid;
+            border-color: red;
+            margin-top: 10px;
+            background-color: #d1d6e8;
+            height: 90px;
+            width: 350px;
+        }
+
+        .yash {
+            text-align: center;
+            color: rgb(255, 0, 0);
+        }
+
+        .second-row {
+            background-color: rgb(0, 0, 0);
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+            height: 375px;
+            border-radius: 25px;
+            margin-top: 20px;
+            margin-left: 8px;
+
+        }
+
+        .number {
+            height: 62px;
+            width: 93px;
+            background-color: #385057;
+            color: white;
+            border-style: 6px solid;
+            font-size: 20px;
+            border-radius: 50px;
+            border: none;
+        }
+
+        .Numberkeys {
+            height: 60px;
+            width: 90px;
+            background-color: rgb(173, 0, 0);
+            color: rgb(255, 228, 228);
+            border-style: 5px solid;
+            font-size: 20px;
+            border-radius: 50px;
+            border: none;
+        }
+
+        .Numberkeys:hover {
+            height: 60px;
+            width: 90px;
+            background-color: #ff0000;
+            color: white;
+            border-style: 5px solid;
+            font-size: 20px;
+            border-radius: 50px;
+            border: none;
+        }
+
+        .orange {
+            background-color: #ff7700;
+            height: 60px;
+            width: 90px;
+            color: white;
+            border-style: 5px solid;
+            font-size: 20px;
+            border-radius: 50px;
+            border: none;
+        }
+
+        .orange:hover {
+            background-color: #d5690b;
+            height: 60px;
+            width: 90px;
+            color: white;
+            border-style: 5px solid;
+            font-size: 20px;
+            border-radius: 50px;
+            border: none;
+        }
+    </style>
+    <!--  Script Tag -->
+    <script>
+        let displayString = "";
+        let total = 0;
+        let action = 0;
+        function numbertype(passnumber) {
+            displayString = displayString + passnumber.toString();
+            document.getElementById("display").innerHTML = displayString;
+        }
+        // function to use add button
+        function add() {
+            total = Number(displayString);
+            displayString = "";
+            action = 1;
+            document.getElementById("display").innerHTML = displayString;
+        }
+        // function to use sub.. button
+        function sub() {
+            total = Number(displayString);
+            displayString = "";
+            action = 2;
+            document.getElementById("display").innerHTML = displayString;
+        }
+        // function to use multiply button
+        function mul() {
+            total = Number(displayString);
+            displayString = "";
+            action = 3;
+            document.getElementById("display").innerHTML = displayString;
+        }
+        // function to use division button
+        function div() {
+            total = Number(displayString);
+            displayString = "";
+            action = 4;
+            document.getElementById("display").innerHTML = displayString;
+        }
+        // function to use percentage button
+        function per() {
+            total = Number(displayString);
+            displayString = "";
+            action = 5;
+            document.getElementById("display").innerHTML = displayString;
+        }
+        // for showing result 
+        function showresult() {
+            if (action == 1) {
+                total = total + Number(displayString);
+            }
+            else if (action == 2) {
+                total = total - Number(displayString);
+            }
+            else if (action == 3) {
+                total = total * Number(displayString);
+            }
+            else if (action == 4) {
+                total = total / Number(displayString);
+            }
+            else if (action == 5) {
+                total = total % Number(displayString);
+            }
+            displayString = total;
+            document.getElementById("display").innerHTML = displayString;
+        }
+        function backspace() {
+            displayString = displayString.substring(0, displayString.length - 1);
+            document.getElementById("display").innerHTML = displayString
+        }
+        function clearText() {
+            total = 0;
+            displayString = "";
+            document.getElementById("display").innerHTML = "";
+        }
+    </script>
+</head>
+
+
+
+<!-- Body -->
+
+<body>
+    <h1 class="yash">My Calculator</h1>
+    <hr size="2px" color="crimsom">
+    <div class="main">
+        <!-- Result  -->
+        <div class="top">
+            <h1 id="display"></h1>
+        </div>
+        <hr color="white" size="2px">
+
+        <div class="second-row">
+            <!-- first Row -->
+            <div><button class="Numberkeys" onclick="clearText()">AC</button></div>
+            <div><button class="Numberkeys">+/-</button></div>
+            <div><button class="Numberkeys" onclick="per()">%</button></div>
+            <div><button class="orange" onclick="div()">/</button></div>
+
+            <!-- second Row -->
+            <div><button class="number" onclick="numbertype(7)">7</button></div>
+            <div><button class="number" onclick="numbertype(8)">8</button></div>
+            <div><button class="number" onclick="numbertype(9)">9</button></div>
+            <div><button class="orange" onclick="mul()">×</button></div>
+
+            <!-- third Row -->
+            <div><button class="number" onclick="numbertype(4)">4</button></div>
+            <div><button class="number" onclick="numbertype(5)">5</button></div>
+            <div><button class="number" onclick="numbertype(6)">6</button></div>
+            <div><button class="orange" onclick="sub()">-</button></div>
+
+            <!-- fourth Row -->
+            <div><button class="number" onclick="numbertype(1)">1</button></div>
+            <div><button class="number" onclick="numbertype(2)">2</button></div>
+            <div><button class="number" class="number" class="number" class="number" onclick="numbertype(3)">3</button>
+            </div>
+            <div><button class="orange" onclick="add()">+</button></div>
+
+            <div><button class="number" onclick="numbertype(0)">0</button></div>
+            <div><button class="number">.</button></div>
+            <div><button class="number" style="font-size: 15px;" onclick="backspace()">DEL</button></div>
+            <div><button class="orange" onclick="showresult()">=</button></div>
+        </div>
+    </div>
+</body>
+
+</html>

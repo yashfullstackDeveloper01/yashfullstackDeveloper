@@ -1,0 +1,158 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'poppins' , sans-serif;
+}
+body
+{
+    color:#ededed;
+}
+.header
+{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 10%;
+    background: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+.logo
+{
+    position: relative;
+    font-size: 25px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+}
+.navbar a {
+    display: inline-block;
+    font-size: 25px;
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    font-weight:500 ;
+    margin-left: 35px;
+    transition: 3s;
+}
+.navbar a:hover{
+    color:#0ef;
+}
+.home{
+    position: relative;
+    width: 100%;
+    justify-content: space-between;
+    height: 100vh;
+    background: url(/Users/enjoy_13_c/Documents/YASHDHAPKE/assets/yash.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    padding: 70px 10% 0;
+}
+.home-content {
+    max-width: 600px;
+}
+.home-content h3{
+    font-size: 32px;
+    font-weight: 700;
+}
+.home-content h1{
+    font-size: 53px;
+    font-weight: 700;
+    margin: -3 0;
+
+}
+.home-content p{
+    font-size:20px;
+    
+    
+}
+.one{
+    height: 35px;
+    width: 35px;
+    border-radius: 50px;
+}
+
+
+.home-sci a:hover { 
+    background-color: aqua;
+    color: rgb(8, 12, 70);
+    box-shadow: rgb(0, 238, 255);
+}
+.bold{
+    position: relative;
+    width: 100%;
+    justify-content: space-between;
+    height: 100vh;
+    background: url(/Users/enjoy_13_c/Documents/YASHDHAPKE/assets/yash.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    padding: 70px 10% 0;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #ff5f6d, #ffc371);
+    color: #fff;
+    text-align: center;
+    padding: 50px;
+}
+
+h1 {
+    margin-bottom: 20px;
+    font-size: 2.5em;
+    color: #fff;
+    animation: colorChange 4s infinite;
+}
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    outline: none;
+}
+input[type="text"], input[type="email"] {
+    background: #fff;
+    color: #333;
+}
+textarea {
+    background: #fff;
+    color: #333;
+    height: 150px;
+    resize: none;
+}
+button {
+    padding: 15px 25px;
+    border: none;
+    border-radius: 5px;
+    background: #ff5f6d;
+    color: #fff;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+button:hover {
+    background: #ff7e6d;
+    transform: scale(1.05);
+}
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+@keyframes colorChange {
+    0% { color: #ff5f6d; }
+    50% { color: #ffc371; }
+    100% { color: #ff5f6d; }
+}
