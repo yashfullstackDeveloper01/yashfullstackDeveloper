@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Day of the Week</title>
+     <!-- Styling for the page -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 70px;
+            border: 2px solid #000000;
+            border-radius: 5px;
+            /* Background styling */
+            background-image: url(data:image/jpeg;base64,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);
+            margin-top: 200px;
+            height: 190px;
+            width: 290px;
+            background-repeat: no-repeat;
+            background-size: cover;
+
+        }
+    </style>
+</head>
+
+<body style="background-image: url(/Users/enjoy_13_c/Documents/YASHDHAPKE/assets/OIG4.gAhhmHqRt2dmzjact.Ix.jpg);background-repeat: no-repeat;background-attachment: fixed;background-size: cover;">
+
+        <!-- Container -->
+        <div class="container">
+            <!-- Heading -->
+            <h2>Enter a Date</h2>
+            <!-- Input field for date selection -->
+            <input type="date" id="inputDate">
+            <!-- Button     -->
+            <button onclick="getDayOfWeek()">Get Day</button>
+            <!-- Paragraph element to display the output -->
+            <p id="dayOutput"></p>
+        </div>
+    
+        <!-- JavaScript  -->
+        <script>
+            // Function to get the day of the week
+            function getDayOfWeek() {
+                //  selected date from the input field
+                var inputDate = document.getElementById("inputDate").value;
+                // Convert the input date string into a Date 
+                var date = new Date(inputDate);
+                // Array of days of the week
+                var days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+               
+                var dayOfWeek = days[date.getDay()];
+    
+           
+                document.getElementById("dayOutput").innerHTML = "The day is: " + dayOfWeek;
+            }
+        </script>
+    
+    </body>
+    </html>
+    

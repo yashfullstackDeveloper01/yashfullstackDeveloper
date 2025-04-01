@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <title>Vowel Checker</title>
+  <style>
+    .container {
+      max-width: 400px;
+      margin: 50px auto;
+      padding: 20px;
+      border: 1px solid #ff6a6a;
+      border-radius: 5px;
+      background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSmt54EnmT3ovQUsZ27Gd8WtR01-SsYSKD7fg&s);
+    }
+
+    input[type="text"] {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+    }
+
+    button {
+      padding: 10px 20px;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body style=" background-image: url(/Users/enjoy_13_c/Documents/YASHDHAPKE/assets/OIG3.TqG4TXs55Ztqu.Fhi3A_.jpg);background-repeat: no-repeat;background-size: cover;">
+  <div class="container">
+    <h2>Vowel Checker</h2>
+    <label for="character">Enter a character:</label>
+    <input type="text" id="character" maxlength="1">
+    <button onclick="checkVowel()">Check</button>
+    <p id="result"></p>
+  </div>
+  <script>
+    function isVowel(char) {
+      return ['a', 'e', 'i', 'o', 'u'].includes(char.toLowerCase());
+    }
+
+    function checkVowel() {
+      var character = document.getElementById('character').value.trim();
+      var resultElement = document.getElementById('result');
+
+      if (character.length === 1 && /^[a-zA-Z]$/.test(character)) {
+        if (isVowel(character)) {
+          resultElement.textContent = character + ' is a vowel.';
+        } else {
+          resultElement.textContent = character + ' is not a vowel.';
+        }
+      } else {
+        resultElement.textContent = 'Please enter a single alphabetic character.';
+      }
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <title></title>
+  <!-- styling -->
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #b1b1b1;
+    }
+
+    .container {
+      max-width: 400px;
+      margin: 50px auto;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      margin-top: 150px;
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    input[type="number"] {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+      margin-bottom: 20px;
+    }
+
+    #results {
+      margin-top: 20px;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- main division -->
+  <div class="container">
+    <h1>Number Comparison</h1>
+    <label for="number1">Number 1:</label>
+    <input type="number" id="number1" oninput="compareNumbers()">
+    <label for="number2">Number 2:</label>
+    <input type="number" id="number2" oninput="compareNumbers()">
+    <label for="number3">Number 3:</label>
+    <input type="number" id="number3" oninput="compareNumbers()">
+    <div id="results"></div>
+  </div>
+
+  <!-- scripting -->
+  <script>
+    // function define
+    function compareNumbers() {
+      // value had consider
+      let number1 = parseInt(document.getElementById('number1').value);
+      let number2 = parseInt(document.getElementById('number2').value);
+      let number3 = parseInt(document.getElementById('number3').value);
+      let resultsDiv = document.getElementById('results');
+      resultsDiv.innerHTML = '';
+      // if else condition applied
+      if (!isNaN(number1) && !isNaN(number2) && !isNaN(number3)) {
+        if (number1 > number2 && number1 > number3) {
+          resultsDiv.innerHTML += 'Number 1 is greater than Number 2 and Number 3.<br>';
+        } else if (number2 > number1 && number2 > number3) {
+          resultsDiv.innerHTML += 'Number 2 is greater than Number 1 and Number 3.<br>';
+        } else if (number3 > number1 && number3 > number2) {
+          resultsDiv.innerHTML += 'Number 3 is greater than Number 1 and Number 2.<br>';
+        } else {
+          resultsDiv.innerHTML += 'Two or more numbers are equal.<br>';
+        }
+      }
+    }
+  </script>
+</body>
+
+</html>

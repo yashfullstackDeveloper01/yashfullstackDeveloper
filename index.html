@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <title> Homepage</title>
+  <!-- styling -->
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #ff0000;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 3rem;
+      margin-top: 100px;
+      color: #00f2ff;
+    }
+
+    p {
+      font-size: 1.2rem;
+      color: #ff0000;
+      margin-top: 20px;
+    }
+
+    .cta-button {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #ffe600;
+      color: #005eff;
+      text-decoration: none;
+      border-radius: 5px;
+      margin-top: 30px;
+      transition: background-color 0.3s ease;
+    }
+/* button hover */
+    .cta-button:hover {
+      background-color: #7bff00;
+    }
+
+    /* Animation */
+
+
+
+    
+
+    
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .animated {
+      animation: fadeInUp 1s ease-out;
+    }
+  </style>
+</head>
+
+<body
+  style="background-image: url(assets/OIG1.z4CiyBK3OxNsyyl89B7m.jpg);background-repeat: no-repeat;background-size: cover;">
+  <div class="container">
+    <h1 class="animated">Welcome to my home PAGE</h1>
+    <p class="animated"></p>
+    <a href="./home-page-two.html" class="cta-button animated">Get Started</a>
+
+  </div>
+</body>
+
+</html>

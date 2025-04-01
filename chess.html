@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+        <title>yash</title>
+        <style>
+                .container {
+                        height: 47.2vw;
+                        width: 47.2vw;
+                        display: flex;
+                        flex-direction: row;
+                        border: 2px;
+                        border-style: solid;
+                        margin-top: 3vw;
+                        margin-left: 25vw;
+                        margin-right: 25vw;
+                        border-style: solid;
+
+                }
+
+                .white {
+                        background-color: white;
+                        height: 5.9vw;
+                        width: 5.9vw;
+                }
+
+                .black {
+                        background-color: black;
+                        height: 5.9vw;
+                        width: 5.9vw;
+                }
+
+                .yash {
+                        background-image: url(data:image/jpeg;base64,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);
+                        background-repeat: no-repeat;
+                        background-size: cover;
+                }
+
+                .img {
+                        position: absolute;
+                        left: 0px;
+                        top: 0px;
+                        z-index: -1;
+                }
+        </style>
+</head>
+
+<body class="yash">
+        <img src="data:image/png;base64,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"
+                width="160" height="160">
+        <h1 style="text-align: center; color: #B80000;">THE CHESS</h1>
+        <!-- main division -->
+        <main class="container">
+                <div>
+                        <!-- frist coloum -->
+                        <div class="white"><img
+                                        src="https://static.wikia.nocookie.net/chess/images/9/97/LightRook.png/revision/latest?cb=20230320152615"
+                                        height="80vw"></div>
+                        <div class="black"><img
+                                        src="https://static.wikia.nocookie.net/chess/images/3/32/LightPawn.png/revision/latest?cb=20230320151907"
+                                        height="80vw"></div>
+                        <div class="white"></div>
+                        <div class="black"></div>
+                        <div class="white"></div>
+                        <div class="black"></div>
+                        <div class="white"><img
+                                        src="./assets/vecteezy_chess-pawn-icon-vector_10954466.jpg"
+                                        height="80vw"></div>
+                        <div class="black"><img
+                                        src="https://static.wikia.nocookie.net/chess/images/b/b9/DarkRook.png/revision/latest?cb=20230320152625"
+                                        height="80vw"></div>
+                </div>
+                <div>
+                        <!-- second coloum -->
+                        <div class="black"><img
+                                        src="https://static.wikia.nocookie.net/chess/images/3/32/LightKnight.png/revision/latest?cb=20230320152142"
+                                        height="80vw"></div>
+                        <div class="white"><img
+                                        src="https://static.wikia.nocookie.net/chess/images/3/32/LightPawn.png/revision/latest?cb=20230320151907"
+                                        height="80vw"></div>
+                        <div class="black"></div>
+                        <div class="white"></div>
+                        <div class="black"></div>
+                        <div class="white"></div>
+                        <div class="black"><img
+                                        src="https://static.wikia.nocookie.net/chess/images/8/8c/DarkPawn.png/revision/latest?cb=20230320152043"
+                                        height="80vw"></div>
+                        <div class="white"><img
+                                        src="https://static.wikia.nocookie.net/chess/images/7/7d/DarkKnight.png/revision/latest?cb=20230320152239"
+                                        height="80vw"></div>
+                </div>
+
+
+                <div>
+                        <!-- third coloum -->
+                        <div class="white"><img
+                                        src="https://static.wikia.nocookie.net/chess/images/d/d7/LightBishop.png/revision/latest?cb=20230320152454"
+                                        height="80vw"></div>
+                        <div class="black"><img
+                                        src="https://static.wikia.nocookie.net/chess/images/3/32/LightPawn.png/revision/latest?cb=20230320151907"
+                                        height="80vw"></div>
+                        <div class="white"></div>
+                        <div class="black"></div>
+                        <div class="white"></div>
+                        <div class="black"></div>
+                        <div class="white"><img
+                                        src="https://static.wikia.nocookie.net/chess/images/8/8c/DarkPawn.png/revision/latest?cb=20230320152043"
+                                        height="80vw"></div>
+                        <div class="black"><img
+                                        src="https://static.wikia.nocookie.net/chess/images/c/c3/DarkBishop.png/revision/latest?cb=20230320152509"
+                                        height="80vw"></div>
+
+                </div>
+                <div>
+                        <!-- forth coloum -->
+                        <div class="black"><img
+                                        src="https://static.wikia.nocookie.net/chess/images/7/78/LightKing.png/revision/latest?cb=20230320152710"
+                                        height="80vw"></div>
+                        <div class="white"><img
+                                        src="https://static.wikia.nocookie.net/chess/images/3/32/LightPawn.png/revision/latest?cb=20230320151907"
+                                        height="80vw"></div>
+                        <div class="black"></div>
+                        <div class="white"></div>
+                        <div class="black"></div>
+                        <div class="white"></div>
+                        <div class="black"><img
+                                        src="https://static.wikia.nocookie.net/chess/images/8/8c/DarkPawn.png/revision/latest?cb=20230320152043"
+                                        height="80vw"></div>
+                        <div class="white"><img
+                                        src="https://static.wikia.nocookie.net/chess/images/d/d7/DarkKing.png/revision/latest?cb=20230320152719"
+                                        height="80vw"></div>
+                </div>
+                <div>
+                        <!-- fifth coloum -->
+                        <div class="white"><img
+                                        src="https://static.wikia.nocookie.net/chess/images/4/42/LightQueen.png/revision/latest?cb=20230320152643"
+                                        height="80vw"></div>
+                        <div class="black"><img
+                                        src="https://static.wikia.nocookie.net/chess/images/3/32/LightPawn.png/revision/latest?cb=20230320151907"
+                                        height="80vw"></div>
+                        <div class="white"></div>
+                        <div class="black"></div>
+                        <div class="white"></div>
+                        <div class="black"></div>
+                        <div class="white"><img
+                                        src="https://static.wikia.nocookie.net/chess/images/8/8c/DarkPawn.png/revision/latest?cb=20230320152043"
+                                        height="80vw"></div>
+                        <div class="black"><img
+                                        src="https://static.wikia.nocookie.net/chess/images/9/90/DarkQueen.png/revision/latest?cb=20230320152652"
+                                        height="80vw"></div>
+                </div>
+                <div>
+                        <!-- sixth coloum -->
+                        <div class="black"><img
+                                        src="https://static.wikia.nocookie.net/chess/images/d/d7/LightBishop.png/revision/latest?cb=20230320152454"
+                                        height="80vw"></div>
+                        <div class="white"><img
+                                        src="https://static.wikia.nocookie.net/chess/images/3/32/LightPawn.png/revision/latest?cb=20230320151907"
+                                        height="80vw"></div>
+                        <div class="black"></div>
+                        <div class="white"></div>
+                        <div class="black"></div>
+                        <div class="white"><img src="" height="80vw"></div>
+                        <div class="black"><img
+                                        src="https://static.wikia.nocookie.net/chess/images/8/8c/DarkPawn.png/revision/latest?cb=20230320152043"
+                                        height="80vw"></div>
+                        <div class="white"><img
+                                        src="https://static.wikia.nocookie.net/chess/images/c/c3/DarkBishop.png/revision/latest?cb=20230320152509"
+                                        height="80vw"></div>
+                </div>
+                <div>
+                        <!-- seventh coloum -->
+                        <div class="white"><img
+                                        src="https://static.wikia.nocookie.net/chess/images/3/32/LightKnight.png/revision/latest?cb=20230320152142"
+                                        height="80vw"></div>
+                        <div class="black"><img
+                                        src="https://static.wikia.nocookie.net/chess/images/3/32/LightPawn.png/revision/latest?cb=20230320151907"
+                                        height="80vw"></div>
+                        <div class="white"></div>
+                        <div class="black"></div>
+                        <div class="white"></div>
+                        <div class="black"></div>
+                        <div class="white"><img
+                                        src="https://static.wikia.nocookie.net/chess/images/8/8c/DarkPawn.png/revision/latest?cb=20230320152043"
+                                        height="80vw"></div>
+                        <div class="black"><img
+                                        src="https://static.wikia.nocookie.net/chess/images/7/7d/DarkKnight.png/revision/latest?cb=20230320152239"
+                                        height="80vw"></div>
+                </div>
+                <div>
+                        <!-- eighth coloum -->
+                        <div class="black"><img
+                                        src="https://static.wikia.nocookie.net/chess/images/9/97/LightRook.png/revision/latest?cb=20230320152615"
+                                        height="80vw"></div>
+                        <div class="white"><img
+                                        src="https://static.wikia.nocookie.net/chess/images/3/32/LightPawn.png/revision/latest?cb=20230320151907"
+                                        height="80vw"></div>
+                        <div class="black"></div>
+                        <div class="white"></div>
+                        <div class="black"></div>
+                        <div class="white"></div>
+                        <div class="black"><img
+                                        src="https://static.wikia.nocookie.net/chess/images/8/8c/DarkPawn.png/revision/latest?cb=20230320152043"
+                                        height="80vw"></div>
+                        <div class="white"><img
+                                        src="https://static.wikia.nocookie.net/chess/images/b/b9/DarkRook.png/revision/latest?cb=20230320152625"
+                                        height="80vw"></div>
+                </div>
+
+
+</body>
+
+</html>

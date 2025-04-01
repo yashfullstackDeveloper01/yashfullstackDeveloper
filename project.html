@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: lightyellow;
+        }
+
+        .style{
+            color: blue ;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            grid-auto-rows: minmax(200px, auto);
+            grid-gap: 20px; 
+            padding: 40px 20px; 
+
+
+            margin-top: 200px;
+        }
+
+        .gallery img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease; 
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .gallery img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            animation: colorChange 5s infinite alternate; 
+        }
+
+        @keyframes colorChange {
+            from {
+                filter: hue-rotate(0deg);
+            }
+            to {
+                filter: hue-rotate(360deg);
+            }
+        }
+
+        h1 {
+            color: rgb(255, 0, 0);
+            text-align: center;
+            margin-bottom: 30px;
+            text-decoration: underline;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+       
+        .modal {
+            display: none; 
+            position: fixed;
+            z-index: 9999; 
+            padding-top: 50px; 
+            left: 0;
+            top: 0;
+            width: 100%; 
+            height: 100%;
+            overflow: auto;
+            background-color: rgb(0,0,0); 
+            background-color: rgba(0,0,0,0.9); 
+        }
+
+     
+        .modal-content {
+            margin: auto;
+            display: block;
+            width: 80%;
+            max-width: 700px;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+     
+    </style>
+</head>
+<body>
+    <h1>HERE IS MY SOME PROJECTS</h1>
+
+
+<div class="gallery">
+ 
+   
+    <a href="./chess.html" class="lightbox"><img class="style" src="./assets/chess.jpg">THE CHESS</a>
+    <a href="./bill.html" class="lightbox"><img class="style" src="assets/bill.jpg">Electricity Bill</a>
+    <a href="./calculater.html" class="lightbox"><img class="style" src="assets/calculater.jpg">calculater</a>
+    <a href="./calendar.html" class="lightbox"><img class="style" src="assets/calender.jpg">calender</a>
+    <a href="./dateandday.html" class="lightbox"><img class="style" src="assets/dayyy.jpg">day and date shower</a>
+    <a href="./greatno.html" class="lightbox"><img class="style" src="assets/graterrt.jpg">greater no.</a>
+    <a href="./half_ticket.html" class="lightbox"><img class="style" src="assets/half.jpg">half ticket</a>
+    <a href="./kbc.html" class="lightbox"><img class="style" src="assets/kbc.jpg">KBC game</a>
+    <a href="./lottrygame.html" class="lightbox"><img class="style" src="assets/lottery.jpg">lottery game</a>
+    <a href="./myfirstform.html" class="lightbox"><img class="style" src="assets/form.jpg">form</a>
+    <a href="./myjava.html" class="lightbox"><img class="style" src="assets/java.jpg">thing should know</a>
+    <a href="./oxo.html" class="lightbox"><img class="style" src="assets/oxo.jpg">OXO Game</a>
+    <a href="./vovels.html" class="lightbox"><img class="style" src="assets/vovels.jpg">vovel chaker</a>
+    <a href="./youtube.html" class="lightbox"><img class="style" src="assets/you.jpg">youtube page</a>
+</div>
+
+<div id="lightboxModal" class="modal">
+    <span class="close">&times;</span>
+    <img class="modal-content" id="lightboxImage">
+</div>
+
+<script>
+  
+    let modal = document.getElementById("lightboxModal");
+
+
+    let images = document.querySelectorAll(".lightbox");
+    let modalImg = document.getElementById("lightboxImage");
+    images.forEach(function(image) {
+        image.addEventListener("click", function(){
+            modal.style.display = "block";
+            modalImg.src = this.href;
+        });
+    });
+
+
+    let span = document.getElementsByClassName("close")[0];
+
+   
+    span.onclick = function() {
+        modal.style.display = "none";
+    }
+
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title></title>
+  <style>
+    .container {
+      background-color: darkgray;
+      height: 70vh;
+      width: 40vw;
+      border-radius: 20px;
+      border-style: solid;
+      margin-top: 10vh;
+      margin-left: 25vw;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .number {
+      background-color: green;
+      color: white;
+      width: 100%;
+    }
+
+    button {
+      height: 44px;
+      width: 100%;
+      cursor: pointer;
+      border: none;
+      font-size: 1vw;
+    }
+
+    button:hover {
+      background-color: rgb(157, 157, 157);
+    }
+
+    button:active {
+      background-color: rgb(218, 218, 218);
+    }
+
+    .orange {
+      background-color: orange;
+      color: rgb(255, 255, 255);
+      border: none;
+    }
+
+    .number-keys {
+      background-color: #2a2a2a;
+
+      color: rgb(255, 255, 255);
+      background-color: #454545;
+      border: none;
+    }
+
+    textarea {
+      resize: none;
+      scroll-behavior: auto;
+    }
+
+    textarea::-webkit-scrollbar {
+      opacity: 1;
+      width: 5px;
+      background-color: white;
+    }
+
+    #display-box {
+      background-color: black;
+      height: 30%;
+      width: 96%;
+      text-align: right;
+      padding-left: 1vw;
+      outline: none;
+      border: none;
+      color: white;
+      font-size: 2vw;
+      font-size: 32px;
+    }
+
+    .submit-button-one {
+      width: 80%;
+      margin: 10%;
+    }
+  </style>
+  <!-- script -->
+  <script>
+    // let x = 0;
+    // function numberOne() {
+    //   x += 10;
+    //   document.getElementById("display-box").innerHTML = 10;
+    // }
+    // function numberTwo() {
+    //   x += 20;
+    //   document.getElementById("display-box").innerHTML = 20;
+    // }
+    // function dataType() {
+    //   document.getElementById("display-box").innerHTML = x;
+    // }
+
+
+    // function comparetwoNumber() {
+
+    //   let a = 1;
+    //   let b = 2;
+    //   let c = 55;
+    //   let d = 14;
+
+
+    //   if (a < b){
+    //     document.getElementById("display-box").innerHTML = "bulb on";
+    //   }else {
+    //     document.getElementById("display-box").innerHTML = "bulb off";
+    //   }
+
+
+    // } 
+
+    // function compare() {
+    //         // input
+    //         let a = document.getElementById("inputOne").value
+    //         let b = document.getElementById("inputTwo").value
+    //         let c = document.getElementById("inputThree").value
+    //         let d = document.getElementById("inputFour").value
+    //         let e = document.getElementById("inputFive").value
+    //         // logic
+
+    //         if (a > b && a > c && a > d  && a > e) {
+    //             document.getElementById("display-box").innerHTML = "a is bigger"
+    //         }
+    //         else if(b >a && b >c&& b > d  && b > e){
+    //             document.getElementById("display-box").innerHTML =  " b is bigger"
+
+    //         }
+    //         else if(c > d && c > a && c > b  && c > e){
+    //             document.getElementById("display-box").innerHTML = " c is bigger "
+
+    //         }
+    //         else if ( d > a && d > b && d > c && d > e){
+    //             document.getElementById("display-box").innerHTML = " d is bigger "
+    //         }
+    //         else if (e > a && e > b && e > c && e > d) {
+    //             document.getElementById("display-box").innerHTML = " e is bigger "
+    //         }
+    //     } 
+
+
+
+                                      // start script
+
+
+        function percentage() {
+          let x = document.getElementById("inputOne").value;
+
+          if(x>=90) {
+            document.getElementById("display-box").innerHTML = "A+"
+
+          }
+       else if(x>=70) {
+            document.getElementById("display-box").innerHTML = "A"
+          }
+          else if(x>=60) {
+            document.getElementById("display-box").innerHTML = "B"
+
+          }
+          else {
+            document.getElementById("display-box").innerHTML = "fail"
+          }
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </script>
+</head>
+
+<body style="background-color: lightgray">
+  <!-- background -->
+  <div class="container">
+    <!-- result box -->
+    <textarea id="display-box" type="text" readonly></textarea>
+    <input id="inputOne" type="text" style="width: 98%; height: 44px; font-size: 24px" />
+   
+
+
+
+    <!-- button -->
+    <div class="submit-button-one">
+      <button class="number" id="results" onclick="percentage()">
+        input box
+      </button>
+    </div>
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,55 @@
+<html>
+<head>
+    <style>
+.box{
+    height: 600px;
+    width: 100vw;
+    border-style: groove;
+}
+#section-one{
+    
+    background-color: aqua;
+}
+#section-two{
+    background-color: rgb(212, 238, 67);
+}
+#section-three{
+    background-color:rgb(60, 251, 184);
+}
+.menu{
+    position: fixed;
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding: 20px;
+    background-color: lightgray;
+}
+a {
+    font-size: 22px;
+}
+html {
+scroll-behavior: smooth;
+}
+
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <div class="menu">
+        <a href="#section-one">section-one</a>
+        <a href="#section-two">section-two</a>
+        <a href="#section-three">section-three</a>
+    </div>
+    <div id="section-one" class="box">
+        <h1>section-one</h1>
+    </div>
+    <div id="section-two" class="box">
+        <h1>section-two</h1>
+    </div>
+    <div id="section-three" class="box">
+        <h1>section-three</h1>
+    </div>
+    
+</body>
+</html>
