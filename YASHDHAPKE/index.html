@@ -1,89 +1,485 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
 
-  <title> Homepage</title>
-  <!-- styling -->
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+        :root {
+            --primary: #5045e4;
+            --accent: #00d4ff;
+            --dark: #222;
+            --light: #f8f9fa;
+            --transition: all 0.3s ease;
+        }
 
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #ff0000;
-    }
+        html {
+            scroll-behavior: smooth;
+        }
 
-    .container {
-      width: 100%;
-      max-width: 1200px;
-      margin: 0 auto;
-      text-align: center;
-    }
-
-    h1 {
-      font-size: 3rem;
-      margin-top: 100px;
-      color: #00f2ff;
-    }
-
-    p {
-      font-size: 1.2rem;
-      color: #ff0000;
-      margin-top: 20px;
-    }
-
-    .cta-button {
-      display: inline-block;
-      padding: 10px 20px;
-      background-color: #ffe600;
-      color: #005eff;
-      text-decoration: none;
-      border-radius: 5px;
-      margin-top: 30px;
-      transition: background-color 0.3s ease;
-    }
-/* button hover */
-    .cta-button:hover {
-      background-color: #7bff00;
-    }
-
-    /* Animation */
+        body {
+            color: var(--dark);
+            background: var(--light);
+            line-height: 1.6;
+        }
 
 
+        header {
+            position: fixed;
+            width: 100%;
+            padding: 1rem 5%;
+            background: var(--dark);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
 
-    
+        .logo {
+            color: #fff;
+            font-size: 1.8rem;
+            font-weight: 700;
+            text-decoration: none;
+        }
 
-    
-    @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(40px);
-      }
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+            margin-left: 10px;
+            font-size: 18px;
+            transition: var(--transition);
+            border-radius: 5px;
+        }
 
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
+        .navbar a:hover {
+            color: var(--accent);
+            background: rgba(255, 255, 255, 0.1);
+        }
 
-    .animated {
-      animation: fadeInUp 1s ease-out;
-    }
-  </style>
+
+        section {
+            min-height: 100vh;
+            padding: 6rem 5% 2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: var(--primary);
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--accent);
+            border-radius: 2px;
+        }
+
+
+        #home {
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            color: #fff;
+            text-align: center;
+        }
+
+        #home h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            animation: fadeIn 1s ease;
+        }
+
+        #home p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+            animation: fadeIn 1.5s ease;
+        }
+
+
+        #about {
+            background: #fff;
+        }
+
+        #about .content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+
+        #skills {
+            background: #f9f9f9;
+        }
+
+        .skills-container {
+            max-width: 700px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .skill {
+            margin: 1.5rem 0;
+        }
+
+        .skill-name {
+            font-weight: bold;
+            margin-bottom: 0.8rem;
+            font-size: 1.1rem;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .skill-bar {
+            height: 12px;
+            background: #e1e1e1;
+            border-radius: 6px;
+            overflow: hidden;
+        }
+
+        .skill-level {
+            height: 100%;
+            border-radius: 6px;
+            width: 0;
+            position: relative;
+        }
+        #projects {
+            background: #fff;
+        }
+
+        #projects {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+            background: white;
+            border-radius: 10px;
+           
+        }
+
+        .html {
+            background: #ff5733;
+        }
+
+        .css {
+            background: #264de4;
+        }
+
+        .js {
+            background: #ffdd00;
+        }
+
+        .dbms {
+            background: #ff00cc;
+        }
+
+
+        #contact {
+            background: #fff;
+        }
+
+        .contact-form {
+            max-width: 500px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 1rem;
+            margin-bottom: 1.5rem;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            transition: var(--transition);
+        }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(80, 69, 228, 0.2);
+        }
+
+        .contact-form button {
+            width: 100%;
+            padding: 1rem;
+            background: var(--primary);
+            color: #fff;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 1.1rem;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .contact-form button:hover {
+            background: var(--accent);
+            transform: translateY(-3px);
+        }
+
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+
+        @media (max-width: 768px) {
+            .navbar {
+                position: fixed;
+                top: -100%;
+                left: 0;
+                width: 100%;
+                background: var(--dark);
+                padding: 1rem 0;
+                text-align: center;
+                flex-direction: column;
+                transition: var(--transition);
+            }
+
+            .navbar.active {
+                top: 70px;
+            }
+
+            .navbar a {
+                display: block;
+                margin: 0.5rem 0;
+            }
+
+            #home h1 {
+                font-size: 2.5rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+            .projects {
+                font-size: 2rem;}
+
+            .projects {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: var(--primary);
+            position: relative;
+        }
+
+        .projects {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--accent);
+            border-radius: 2px;
+        }
+        }
+
+    </style>
 </head>
 
-<body
-  style="background-image: url(./assets/OIG1.z4CiyBK3OxNsyyl89B7m.jpg);background-repeat: no-repeat;background-size: cover;">
-  <div class="container">
-    <h1 class="animated">Welcome to my home PAGE</h1>
-    <p class="animated"></p>
-    <a href="./home-page-two.html" class="cta-button animated">Get Started</a>
+<body>
+    <header>
+        <a href="#home" class="logo">Portfolio</a>
+        <nav class="navbar">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">projects</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
 
-  </div>
+    <section id="home">
+        <div class="home-content">
+            <h1>Welcome to My Portfolio</h1>
+            <p>I am a passionate web developer creating elegant and functional websites.</p>
+        </div>
+    </section>
+
+    <section id="about">
+        <h2 class="section-title">About Me</h2>
+        <div class="content">
+            <p>Hello! I'm a dedicated web developer with a strong passion for creating beautiful, functional websites.
+                With expertise in HTML, CSS, JavaScript, and database management, I deliver high-quality web solutions
+                that meet client needs.</p>
+            <p>My approach combines technical skill with creative design thinking to build responsive, user-friendly
+                interfaces that provide exceptional user experiences.</p>
+        </div>
+    </section>
+
+    <section id="skills">
+        <h2 class="section-title">My Skills</h2>
+        <div class="skills-container">
+            <div class="skill">
+                <div class="skill-name">
+                    <span>HTML</span>
+                    <span>90%</span>
+                </div>
+                <div class="skill-bar">
+                    <div class="skill-level html" data-level="90%"></div>
+                </div>
+            </div>
+            <div class="skill">
+                <div class="skill-name">
+                    <span>CSS</span>
+                    <span>85%</span>
+                </div>
+                <div class="skill-bar">
+                    <div class="skill-level css" data-level="85%"></div>
+                </div>
+            </div>
+            <div class="skill">
+                <div class="skill-name">
+                    <span>JavaScript</span>
+                    <span>75%</span>
+                </div>
+                <div class="skill-bar">
+                    <div class="skill-level js" data-level="75%"></div>
+                </div>
+            </div>
+            <div class="skill">
+                <div class="skill-name">
+                    <span>Database Management</span>
+                    <span>80%</span>
+                </div>
+                <div class="skill-bar">
+                    <div class="skill-level dbms" data-level="80%"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+
+    <section id="projects">
+        <h2 class="section-title">My projects</h2>
+        <div class="content">
+          
+        </div> 
+      <p style="text-align: center">Comming Soon....</p>
+      <p style="text-align: center">Comming Soon....</p>
+    </section>
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <section id="contact">
+        <h2 class="section-title">Contact Me</h2>
+        <form class="contact-form">
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea rows="5" placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+
+    <script>
+
+        const navToggle = document.querySelector('.mobile-toggle');
+        const navbar = document.querySelector('.navbar');
+
+        if (navToggle) {
+            navToggle.addEventListener('click', () => {
+                navbar.classList.toggle('active');
+            });
+        }
+
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+
+                if (navbar.classList.contains('active')) {
+                    navbar.classList.remove('active');
+                }
+            });
+        });
+
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const skillsSection = document.querySelector('#skills');
+
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const skillBars = skillsSection.querySelectorAll('.skill-level');
+
+                        skillBars.forEach(bar => {
+                            const level = bar.getAttribute('data-level');
+                            bar.style.width = level;
+                            bar.style.transition = 'width 1.5s ease';
+                        });
+
+                        observer.unobserve(skillsSection);
+                    }
+                });
+            }, { threshold: 0.5 });
+
+            observer.observe(skillsSection);
+        });
+    </script>
 </body>
 
 </html>
